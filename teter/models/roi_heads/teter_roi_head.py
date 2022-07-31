@@ -272,7 +272,7 @@ class TETerRoIHead(StandardRoIHead):
             x, img_metas, proposal_list, self.test_cfg, rescale=rescale
         )
 
-       
+
         det_bboxes = det_bboxes[0]
         det_labels = det_labels[0]
 
