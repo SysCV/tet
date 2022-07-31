@@ -1,0 +1,7 @@
+tools/euler/*
+.gitignore
+tools/bsub_*
+tools/lint.sh
+.idea
+*.log
+teta/scripts/lint.sh
