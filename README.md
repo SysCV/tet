@@ -1,6 +1,6 @@
-# Track Every Thing in the Wild [ECCV2022]
+# Tracking Every Thing in the Wild [ECCV2022]
 
-This is the offical implementation of paper [Track Every Thing in the Wild](https://arxiv.org/abs/2207.12978).
+This is the offical implementation of paper [Tracking Every Thing in the Wild](https://arxiv.org/abs/2207.12978).
 
 Our project website contains more information: [vis.xyz/pub/tet](https://www.vis.xyz/pub/tet/).
 
