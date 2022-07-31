@@ -1,4 +1,4 @@
-# Track Every Thing in the Wild [ECCV2022]
+# Tracking Every Thing in the Wild [ECCV2022]
 
 This is the offical implementation of paper [Track Every Thing in the Wild](https://arxiv.org/abs/2207.12978).
 
