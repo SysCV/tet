@@ -155,7 +155,7 @@ Optional arguments are:
 
 #### Train BDD100k model
 
-Load pretrained [QDTrack model](https://drive.google.com/file/d/1YNAQgd8rMqqEG-fRj3VWlO4G5kdwJbxz/view) and train the CEM head on the BDD100K Detection dataset.
+Load pretrained [QDTrack model](https://drive.google.com/file/d/1qkgnRt7XkL4cjkwB1qIRnOHiMaXXdXIu/view?usp=sharing) and train the CEM head on the BDD100K Detection dataset.
 ```angular2html
 tools/dist_train.sh configs/bdd100k/cem_bdd.py 8 25000 --work-dir saved_models/teter_bdd/ --cfg-options load_from=saved_models/qdtrack-frcnn_r50_fpn_12e_bdd100k-13328aed.pth 
 ```
@@ -163,11 +163,11 @@ tools/dist_train.sh configs/bdd100k/cem_bdd.py 8 25000 --work-dir saved_models/t
 #### Train TAO model
 First, train the detector and CEM on LVISv0.5 + COCO dataset.
 ```angular2html
-tools/dist_train.sh configs/tao/cem_lvis.py 8 25000 --work-dir saved_models/cem_lvis/
+tools/dist_train.sh configs/tao/cem_lvis.py 8 25000 --work-dir saved_models/cem_r101_lvis/
 ```
 Then, train the instance appearance similarity head on the TAO dataset.
 ```angular2html
-tools/dist_train.sh configs/tao/tracker_tao.py 4 25000 --work-dir saved_models/teter_tao/ --cfg-options load_from=saved_models/cem_lvis/epoch_24.pth data.samples_per_gpu=4 
+tools/dist_train.sh configs/tao/tracker_tao.py 4 25000 --work-dir saved_models/teter_r101_tao/ --cfg-options load_from=saved_models/cem_lvis/epoch_24.pth data.samples_per_gpu=4 
 ```
 
 
@@ -182,8 +182,8 @@ But to report the results on BDD100K, evaluating with BDD100K-format is required
 
 Trained models for testing
 
-- [BDD100K model](https://drive.google.com/file/d/1Ax5KPkESgm95Q7wf7Xug3uK_7xhZXaHJ/view?usp=sharing)
-- [TAO model](https://drive.google.com/drive/folders/11MeYxx5rUEo01d-zGpdPUYtHev-w9S9U?usp=sharing)
+- [BDD100K model](https://drive.google.com/file/d/1InuFZkOtIsYZLCe0HFK74YK-_a0X1q6q/view?usp=sharing)
+- [TAO model](https://drive.google.com/file/d/17koyuCbnj42ioZRxZZ5DChmCoAaMwets/view?usp=sharing)
 
 You can use the following commands to test a dataset.
 

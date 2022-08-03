@@ -1,5 +1,5 @@
 # model settings
-_base_ = './cem_swin_lvis.py'
+_base_ = './cem_swinS_lvis.py'
 model = dict(
     freeze_detector=True,
     freeze_cem=True,
@@ -128,4 +128,4 @@ lr_config = dict(
 total_epochs = 12
 load_from = None
 evaluation = dict(metric=['track'], start=8, interval=1, resfile_path='/scratch/tmp/')
-work_dir = './saved_models/teter_r101/'
+work_dir = './saved_models/teter_swinS/'

@@ -34,27 +34,30 @@ Our method outperforms the states of the art on BDD100K, and TAO benchmarks.
 
 ### BDD100K val set
 
-| Method                                              | backbone  | mMOTA | mIDF1 | TETA | LocA | AssocA | ClsA |
-|-----------------------------------------------------|-----------|-------|-------|------|------|--------|------|
-| [QDTrack(CVPR21)](https://arxiv.org/abs/2006.06664) | ResNet-50 | 36.6  | 51.6  | 47.8 | 45.9 | 48.5   | 49.2 |
-| TETer (Ours)                                        | ResNet-50 | 39.1  | 53.3  | 50.8 | 47.2 | 52.9   | 52.4 |
+| Method                                              | backbone  | mMOTA | mIDF1 | TETA | LocA | AssocA | ClsA | config                            | model                                                                                              |
+|-----------------------------------------------------|-----------|-------|-------|------|------|--------|------|-----------------------------------|----------------------------------------------------------------------------------------------------|
+| [QDTrack(CVPR21)](https://arxiv.org/abs/2006.06664) | ResNet-50 | 36.6  | 51.6  | 47.8 | 45.9 | 48.5   | 49.2 | -                                 | -                                                                                                  |
+| TETer (Ours)                                        | ResNet-50 | 39.1  | 53.3  | 50.8 | 47.2 | 52.9   | 52.4 | [cfg](configs/bdd100k/cem_bdd.py) | [google drive](https://drive.google.com/file/d/1InuFZkOtIsYZLCe0HFK74YK-_a0X1q6q/view?usp=sharing) |
 
 
 ### BDD100K test set
 
-| Method                                              | backbone  | mMOTA | mIDF1 | TETA | LocA | AssocA | ClsA |
-|-----------------------------------------------------|-----------|-------|-------|------|------|--------|------|
-| [QDTrack(CVPR21)](https://arxiv.org/abs/2006.06664) | ResNet-50 | 35.7  | 52.3  | 49.2 | 47.2 | 50.9   | 49.2 |
-| TETer (Ours)                                        | ResNet-50 | 37.4  | 53.3  | 50.8 | 47.0 | 53.6   | 50.7 |
+| Method                                              | backbone  | mMOTA | mIDF1 | TETA | LocA | AssocA | ClsA | config                            | model                                                                                              |
+|-----------------------------------------------------|-----------|-------|-------|------|------|--------|------|-----------------------------------|----------------------------------------------------------------------------------------------------|
+| [QDTrack(CVPR21)](https://arxiv.org/abs/2006.06664) | ResNet-50 | 35.7  | 52.3  | 49.2 | 47.2 | 50.9   | 49.2 | -                                 | -                                                                                                  | 
+| TETer (Ours)                                        | ResNet-50 | 37.4  | 53.3  | 50.8 | 47.0 | 53.6   | 50.7 | [cfg](configs/bdd100k/cem_bdd.py) | [google drive](https://drive.google.com/file/d/1InuFZkOtIsYZLCe0HFK74YK-_a0X1q6q/view?usp=sharing) | 
 
 
 ### TAO val set
 
-| Method                                              | backbone   | TETA | LocA | AssocA | ClsA |
-|-----------------------------------------------------|------------|------|------|--------|------|
-| [QDTrack(CVPR21)](https://arxiv.org/abs/2006.06664) | ResNet-101 | 30.0 | 50.5 | 27.4   | 12.1 |
-| TETer (Ours)                                        | ResNet-101 | 33.3 | 51.6 | 35.0   | 13.2 |
-| TETer-swinT (Ours)                                  | SwinT      | 34.6 | 52.1 | 36.7   | 15.0 |
+| Method                                              | backbone          | TETA | LocA | AssocA | ClsA | config                               | model                                                                                              |
+|-----------------------------------------------------|-------------------|------|------|--------|------|--------------------------------------|----------------------------------------------------------------------------------------------------|
+| [QDTrack(CVPR21)](https://arxiv.org/abs/2006.06664) | ResNet-101        | 30.0 | 50.5 | 27.4   | 12.1 | -                                    | -                                                                                                  |
+| TETer (Ours)                                        | ResNet-101        | 33.3 | 51.6 | 35.0   | 13.2 | [cfg](configs/tao/cem_r101_lvis.py)  | [google drive](https://drive.google.com/file/d/17koyuCbnj42ioZRxZZ5DChmCoAaMwets/view?usp=sharing) |
+| TETer-HTC (Ours)                                    | ResNeXt-101-64x4d | 36.9 | 57.5 | 37.5   | 15.7 | -                                    | -                                                                                                  |
+| TETer-SwinT (Ours)                                  | SwinT             | 34.6 | 52.1 | 36.7   | 15.0 | [cfg](configs/tao/cem_swinT_lvis.py) | [google drive](https://drive.google.com/file/d/1UvMkH1xfCqNghiDCbb6jE_9yklYggmlM/view?usp=sharing) |
+| TETer-SwinS (Ours)                                  | SwinS             | 36.7 | 54.2 | 38.4   | 17.4 | [cfg](configs/tao/cem_swinS_lvis.py) | [google drive](https://drive.google.com/file/d/1jRjrj57PKi7fLKBgoq2Dt5SZJC4Nejip/view?usp=sharing) |
+| TETer-SwinB (Ours)                                  | SwinB             | 38.8 | 55.6 | 40.1   | 20.8 | [cfg](configs/tao/cem_swinB_lvis.py) | [google drive](https://drive.google.com/file/d/11Y3Vv1gB4m0Vn7AKI5XW1TIsCOq30hKB/view?usp=sharing) |
 
 ## Installation
 
