@@ -38,7 +38,7 @@ python scripts/run_coco.py --METRICS TETA --TRACKERS_TO_EVAL TETer --GT_FOLDER $
 
 ```
 @InProceedings{trackeverything,
-  title = {Track Every Thing in the Wild},
+  title = {Tracking Every Thing in the Wild},
   author = {Li, Siyuan and Danelljan, Martin and Ding, Henghui and Huang, Thomas E. and Yu, Fisher},
   booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
   month = {Oct},

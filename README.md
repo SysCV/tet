@@ -58,6 +58,7 @@ Our method outperforms the states of the art on BDD100K, and TAO benchmarks.
 | TETer-SwinT (Ours)                                  | SwinT             | 34.6 | 52.1 | 36.7   | 15.0 | [cfg](configs/tao/cem_swinT_lvis.py) | [google drive](https://drive.google.com/file/d/1UvMkH1xfCqNghiDCbb6jE_9yklYggmlM/view?usp=sharing) |
 | TETer-SwinS (Ours)                                  | SwinS             | 36.7 | 54.2 | 38.4   | 17.4 | [cfg](configs/tao/cem_swinS_lvis.py) | [google drive](https://drive.google.com/file/d/1jRjrj57PKi7fLKBgoq2Dt5SZJC4Nejip/view?usp=sharing) |
 | TETer-SwinB (Ours)                                  | SwinB             | 38.8 | 55.6 | 40.1   | 20.8 | [cfg](configs/tao/cem_swinB_lvis.py) | [google drive](https://drive.google.com/file/d/11Y3Vv1gB4m0Vn7AKI5XW1TIsCOq30hKB/view?usp=sharing) |
+| TETer-SwinL (Ours)                                  | SwinL             | 40.1 | 56.3 | 39.9   | 24.1 | [cfg](configs/tao/cem_swinL_lvis.py) | [google drive](https://drive.google.com/file/d/1J3z5pbF7trU3fDCVfizAPsmp3oV9NVj8/view?usp=sharing)                                                                                   |
 
 ## Installation
 
@@ -72,7 +73,7 @@ Please refer to [GET_STARTED.md](docs/GET_STARTED.md) for dataset preparation an
 
 ```
 @InProceedings{trackeverything,
-  title = {Track Every Thing in the Wild},
+  title = {Tracking Every Thing in the Wild},
   author = {Li, Siyuan and Danelljan, Martin and Ding, Henghui and Huang, Thomas E. and Yu, Fisher},
   booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
   month = {Oct},
