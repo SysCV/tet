@@ -20,7 +20,7 @@ def l2_loss(pred, target):
     return loss
 
 
-@LOSSES.register_module()
+@LOSSES.register_module(force=True)
 class L2Loss(nn.Module):
     """L2 loss.
 

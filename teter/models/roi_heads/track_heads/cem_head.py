@@ -7,7 +7,7 @@ from mmdet.models import HEADS, build_loss
 from teter.core import cal_similarity
 
 
-@HEADS.register_module()
+@HEADS.register_module(force=True)
 class ClsExemplarHead(nn.Module):
     def __init__(
         self,

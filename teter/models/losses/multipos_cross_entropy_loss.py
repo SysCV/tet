@@ -60,7 +60,7 @@ def multi_pos_cross_entropy(
     return loss
 
 
-@LOSSES.register_module()
+@LOSSES.register_module(force=True)
 class MultiPosCrossEntropyLoss(nn.Module):
     def __init__(self, reduction="mean", loss_weight=1.0, version="v3"):
         super(MultiPosCrossEntropyLoss, self).__init__()

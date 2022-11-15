@@ -7,7 +7,7 @@ from ..core import eval_mot
 from .parsers import CocoVID
 
 
-@DATASETS.register_module()
+@DATASETS.register_module(force=True)
 class CocoVideoDataset(CocoDataset):
 
     CLASSES = None

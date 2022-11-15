@@ -43,7 +43,6 @@ model = dict(
                             pos_normalize=True,
                             loss_weight=0.25)
             , softmax_temp=-1),
-
         track_head=dict(
             type='QuasiDenseEmbedHead',
             num_convs=4,

@@ -36,7 +36,7 @@ def majority_vote(prediction):
     return class_by_majority_count_res
 
 
-@DATASETS.register_module()
+@DATASETS.register_module(force=True)
 class TaoDataset(CocoVideoDataset):
     def load_annotations(self, ann_file):
         """Load annotation from annotation file."""
