@@ -176,7 +176,7 @@ class COCO(_BaseDataset):
         [gt_dets]: list (for each timestep) of lists of detections.
 
         if not is_gt, this returns a dict which contains the fields:
-        [tk_ids, tk_classes, tk_confidences]:
+        [tk_ids, tk_classes]:
             list (for each timestep) of 1D NDArrays (for each det).
         [tk_dets]: list (for each timestep) of lists of detections.
         """
@@ -191,8 +191,8 @@ class COCO(_BaseDataset):
         num_timesteps = self.seq_lengths[seq_id]
         img_to_timestep = self.seq2images2timestep[seq_id]
         data_keys = ["ids", "classes", "dets"]
-        if not is_gt:
-            data_keys += ["tk_confidences"]
+        # if not is_gt:
+        #     data_keys += ["tk_confidences"]
         raw_data = {key: [None] * num_timesteps for key in data_keys}
         for img in imgs:
             # some tracker data contains images without any ground truth info,
@@ -211,18 +211,18 @@ class COCO(_BaseDataset):
             raw_data["classes"][t] = np.atleast_1d(
                 [ann["category_id"] for ann in anns]
             ).astype(int)
-            if not is_gt:
-                raw_data["tk_confidences"][t] = np.atleast_1d(
-                    [ann["score"] for ann in anns]
-                ).astype(float)
+            # if not is_gt:
+            #     raw_data["tk_confidences"][t] = np.atleast_1d(
+            #         [ann["score"] for ann in anns]
+            #     ).astype(float)
 
         for t, d in enumerate(raw_data["dets"]):
             if d is None:
                 raw_data["dets"][t] = np.empty((0, 4)).astype(float)
                 raw_data["ids"][t] = np.empty(0).astype(int)
                 raw_data["classes"][t] = np.empty(0).astype(int)
-                if not is_gt:
-                    raw_data["tk_confidences"][t] = np.empty(0)
+                # if not is_gt:
+                #     raw_data["tk_confidences"][t] = np.empty(0)
 
         if is_gt:
             key_map = {"ids": "gt_ids", "classes": "gt_classes", "dets": "gt_dets"}
@@ -279,7 +279,7 @@ class COCO(_BaseDataset):
             "tk_class_eval_tk_ids",
             "tk_dets",
             "tk_classes",
-            "tk_confidences",
+            # "tk_confidences",
             "tk_exh_ids",
             "sim_scores",
         ]
@@ -369,7 +369,7 @@ class COCO(_BaseDataset):
 
             # add overlap classes for computing the FP for Cls term
             tracker_overlap_classes = raw_data["tk_classes"][t][tk_overlap_mask]
-            tracker_confidences = raw_data["tk_confidences"][t][tk_mask]
+            # tracker_confidences = raw_data["tk_confidences"][t][tk_mask]
             sim_scores_masked = sim_scores[t][gt_class_mask, :][:, tk_mask]
 
             # add filtered prediction to the data
@@ -377,7 +377,7 @@ class COCO(_BaseDataset):
             data["tk_overlap_classes"][t] = tracker_overlap_classes
             data["tk_ids"][t] = tk_ids
             data["tk_dets"][t] = tk_dets
-            data["tk_confidences"][t] = tracker_confidences
+            # data["tk_confidences"][t] = tracker_confidences
             data["sim_scores"][t] = sim_scores_masked
             data["tk_class_eval_tk_ids"][t] = set(
                 list(data["tk_overlap_ids"][t]) + list(data["tk_exh_ids"][t])
