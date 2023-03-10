@@ -19,6 +19,12 @@ multiple categories and incomplete annotations. TETA evaluate trackers based on 
 localization score, an association score, and a classification score, which enable
 us to evaluate the different aspects of each tracker properly.
 
+
+Install TETA metric:
+```angular2html
+ python -m pip install git+https://github.com/SysCV/tet.git/#subdirectory=teta  
+```
+
 <img src="figures/teta-teaser.png" width="400">
 
 ## TETer
