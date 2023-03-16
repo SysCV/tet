@@ -260,6 +260,8 @@ class TETA(_BaseMetric):
 
         if all_res:
             thresholds = list(list(all_res.values())[0].keys())
+        else:
+            thresholds = [50]
         for thr in thresholds:
             data[thr] = {}
             for seq_key in all_res:
@@ -291,6 +293,8 @@ class TETA(_BaseMetric):
         res = {}
         if all_res:
             thresholds = list(list(all_res.values())[0].keys())
+        else:
+            thresholds = [50]
         for thr in thresholds:
             data[thr] = {}
             for cls_key in all_res:
@@ -330,6 +334,8 @@ class TETA(_BaseMetric):
         res = {}
         if all_res:
             thresholds = list(list(all_res.values())[0].keys())
+        else:
+            thresholds = [50]
         for thr in thresholds:
             data[thr] = {}
             for cls_key in all_res:
