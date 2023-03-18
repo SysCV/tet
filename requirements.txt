@@ -5,4 +5,4 @@ pycocotools
 seaborn
 tqdm
 h5py
-git+git://github.com/bdd100k/bdd100k.git
+git+https://github.com/bdd100k/bdd100k.git
