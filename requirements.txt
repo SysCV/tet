@@ -4,5 +4,6 @@ numpy
 pycocotools
 seaborn
 tqdm
+timm
 h5py
 git+https://github.com/bdd100k/bdd100k.git
