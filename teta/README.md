@@ -15,7 +15,7 @@ Our local clusters enable us to evaluate tracks even when the class prediction i
 ## Install
 Install the TETA environment using pip.
 ```angular2html
-pip -r install requirements.txt
+pip install -r requirements.txt
 ```
 Go to the root of this repo and quick install by
 ```
