@@ -17,9 +17,9 @@ Install the TETA environment using pip.
 ```angular2html
 pip install -r requirements.txt
 ```
-Go to the root of this repo and quick install by
+Go to the root of the teta folder and quick install by
 ```
-pip install .
+pip install -e .
 ```
 ## Support data format
 Result format follows COCO-VID format. We describe the format in detail [here](./docs/TAO-format.txt)
