@@ -118,6 +118,8 @@ python ./scripts/detectors/merge_coco_with_lvis.py --lvis ${LVIS_PATH}/annotatio
 
 You can also get the merged annotation file from [Google Drive](https://drive.google.com/file/d/1v_q0eWpKgVDMvmjQ8pBKPgHQQ8SLhLx0/view?usp=sharing) or [Baidu Yun](https://pan.baidu.com/s/1XnwJ5FqsA_neV0MSXu42hg) (passcode: rkh2).
 
+During the training and inference, we use an additional file which save all class names: [lvis_classes.txt](https://drive.google.com/file/d/1H9JHpUe6ZZdFCahKiaujjrsNO2X8ocN_/view?usp=sharing).
+Please download it and put it in `${LVIS_PATH}/annotations/`.
 
 ## Run TETer
 This codebase is inherited from [mmdetection](https://github.com/open-mmlab/mmdetection).
