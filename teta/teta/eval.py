@@ -50,7 +50,7 @@ class Evaluator:
             # Evaluate each tracker
             for tracker in tracker_list:
                 try:
-                    self.evaluate_tracker(
+                    output_res, output_msg = self.evaluate_tracker(
                         tracker,
                         dataset,
                         dname,
