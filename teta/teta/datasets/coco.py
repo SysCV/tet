@@ -399,12 +399,12 @@ class COCO(_BaseDataset):
             gt_id_map[unique_gt_ids] = np.arange(len(unique_gt_ids))
             data["gt_id_map"] = {}
             for gt_id in unique_gt_ids:
-                new_gt_id = gt_id_map[gt_id].astype(np.int)
+                new_gt_id = gt_id_map[gt_id].astype(int)
                 data["gt_id_map"][new_gt_id] = gt_id
 
             for t in range(raw_data["num_timesteps"]):
                 if len(data["gt_ids"][t]) > 0:
-                    data["gt_ids"][t] = gt_id_map[data["gt_ids"][t]].astype(np.int)
+                    data["gt_ids"][t] = gt_id_map[data["gt_ids"][t]].astype(int)
 
         if len(unique_tk_ids) > 0:
             unique_tk_ids = np.unique(unique_tk_ids)
@@ -413,16 +413,16 @@ class COCO(_BaseDataset):
 
             data["tk_id_map"] = {}
             for track_id in unique_tk_ids:
-                new_track_id = tk_id_map[track_id].astype(np.int)
+                new_track_id = tk_id_map[track_id].astype(int)
                 data["tk_id_map"][new_track_id] = track_id
 
             for t in range(raw_data["num_timesteps"]):
                 if len(data["tk_ids"][t]) > 0:
-                    data["tk_ids"][t] = tk_id_map[data["tk_ids"][t]].astype(np.int)
+                    data["tk_ids"][t] = tk_id_map[data["tk_ids"][t]].astype(int)
                 if len(data["tk_overlap_ids"][t]) > 0:
                     data["tk_overlap_ids"][t] = tk_id_map[
                         data["tk_overlap_ids"][t]
-                    ].astype(np.int)
+                    ].astype(int)
 
         # record overview statistics.
         data["num_tk_cls_dets"] = num_tk_cls_dets
