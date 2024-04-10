@@ -88,7 +88,7 @@ class TETA(_BaseMetric):
                 cls_fp_thr[cls] = data["num_tk_cls_dets"] * np.ones(
                     (len(self.cls_array_labels)), dtype=float
                 )
-
+            res = self._compute_final_fields(res)
             return res, cls_fp_thr, class_info_list
 
         if data["num_gt_dets"] == 0:
@@ -96,6 +96,7 @@ class TETA(_BaseMetric):
                 cls_fp_thr[cls] = data["num_tk_cls_dets"] * np.ones(
                     (len(self.cls_array_labels)), dtype=float
                 )
+            res = self._compute_final_fields(res)
             return res, cls_fp_thr, class_info_list
 
         # global alignment score
