@@ -311,11 +311,11 @@ class TAO(_BaseDataset):
         for t in range(raw_data["num_timesteps"]):
             # only extract relevant dets for this class for preproc and eval
             if cls == "all":
-                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(np.bool)
+                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(bool)
             else:
                 gt_class_mask = np.atleast_1d(
                     raw_data["gt_classes"][t] == cls_id
-                ).astype(np.bool)
+                ).astype(bool)
 
             # select GT that is not in the evaluating classes
             if assignment is not None and assignment:
@@ -350,11 +350,11 @@ class TAO(_BaseDataset):
         for t in range(raw_data["num_timesteps"]):
             # add gt to the data
             if cls == "all":
-                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(np.bool)
+                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(bool)
             else:
                 gt_class_mask = np.atleast_1d(
                     raw_data["gt_classes"][t] == cls_id
-                ).astype(np.bool)
+                ).astype(bool)
                 data["gt_classes"][t] = cls_id
                 data["gt_class_name"][t] = cls
 

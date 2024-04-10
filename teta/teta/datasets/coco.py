@@ -296,11 +296,11 @@ class COCO(_BaseDataset):
         for t in range(raw_data["num_timesteps"]):
             # only extract relevant dets for this class for preproc and eval
             if cls == "all":
-                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(np.bool)
+                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(bool)
             else:
                 gt_class_mask = np.atleast_1d(
                     raw_data["gt_classes"][t] == cls_id
-                ).astype(np.bool)
+                ).astype(bool)
 
             # select GT that is not in the evaluating classes
             if assignment is not None and assignment:
@@ -328,7 +328,7 @@ class COCO(_BaseDataset):
 
             # add the track ids of exclusive annotated class to exh_class_tk_ids
             tk_exh_mask = np.atleast_1d(raw_data["tk_classes"][t] == cls_id)
-            tk_exh_mask = tk_exh_mask.astype(np.bool)
+            tk_exh_mask = tk_exh_mask.astype(bool)
             exh_class_tk_ids_t = raw_data["tk_ids"][t][tk_exh_mask]
             exh_class_tk_ids.append(exh_class_tk_ids_t)
             data["tk_exh_ids"][t] = exh_class_tk_ids_t
@@ -340,11 +340,11 @@ class COCO(_BaseDataset):
         for t in range(raw_data["num_timesteps"]):
             # add gt to the data
             if cls == "all":
-                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(np.bool)
+                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(bool)
             else:
                 gt_class_mask = np.atleast_1d(
                     raw_data["gt_classes"][t] == cls_id
-                ).astype(np.bool)
+                ).astype(bool)
                 data["gt_classes"][t] = cls_id
                 data["gt_class_name"][t] = cls
 
