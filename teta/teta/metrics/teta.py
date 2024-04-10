@@ -75,18 +75,18 @@ class TETA(_BaseMetric):
         class_info_list = []
         for field in self.float_array_fields + self.integer_array_fields:
             if field.startswith("Cls"):
-                res[field] = np.zeros(len(self.cls_array_labels), dtype=np.float)
+                res[field] = np.zeros(len(self.cls_array_labels), dtype=float)
             else:
-                res[field] = np.zeros((len(self.array_labels)), dtype=np.float)
+                res[field] = np.zeros((len(self.array_labels)), dtype=float)
 
         # return empty result if tracker or gt sequence is empty
         if data["num_tk_overlap_dets"] == 0:
             res["Loc_FN"] = data["num_gt_dets"] * np.ones(
-                (len(self.array_labels)), dtype=np.float
+                (len(self.array_labels)), dtype=float
             )
             if self.exhaustive:
                 cls_fp_thr[cls] = data["num_tk_cls_dets"] * np.ones(
-                    (len(self.cls_array_labels)), dtype=np.float
+                    (len(self.cls_array_labels)), dtype=float
                 )
 
             return res, cls_fp_thr, class_info_list
@@ -94,7 +94,7 @@ class TETA(_BaseMetric):
         if data["num_gt_dets"] == 0:
             if self.exhaustive:
                 cls_fp_thr[cls] = data["num_tk_cls_dets"] * np.ones(
-                    (len(self.cls_array_labels)), dtype=np.float
+                    (len(self.cls_array_labels)), dtype=float
                 )
             return res, cls_fp_thr, class_info_list
 
