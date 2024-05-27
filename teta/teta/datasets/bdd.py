@@ -296,11 +296,11 @@ class BDD(_BaseDataset):
         for t in range(raw_data["num_timesteps"]):
             # only extract relevant dets for this class for preproc and eval
             if cls == "all":
-                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(np.bool)
+                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(bool)
             else:
                 gt_class_mask = np.atleast_1d(
                     raw_data["gt_classes"][t] == cls_id
-                ).astype(np.bool)
+                ).astype(bool)
 
             # For unmatched tracker dets, remove those that are greater than 50% within a crowd ignore region.
 
@@ -353,7 +353,7 @@ class BDD(_BaseDataset):
 
             # add the track ids of exclusive annotated class to exh_class_tk_ids
             tk_exh_mask = np.atleast_1d(raw_data["tk_classes"][t] == cls_id)
-            tk_exh_mask = tk_exh_mask.astype(np.bool)
+            tk_exh_mask = tk_exh_mask.astype(bool)
             exh_class_tk_ids_t = raw_data["tk_ids"][t][tk_exh_mask]
             exh_class_tk_ids.append(exh_class_tk_ids_t)
             data["tk_exh_ids"][t] = exh_class_tk_ids_t
@@ -365,11 +365,11 @@ class BDD(_BaseDataset):
         for t in range(raw_data["num_timesteps"]):
             # add gt to the data
             if cls == "all":
-                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(np.bool)
+                gt_class_mask = np.ones_like(raw_data["gt_classes"][t]).astype(bool)
             else:
                 gt_class_mask = np.atleast_1d(
                     raw_data["gt_classes"][t] == cls_id
-                ).astype(np.bool)
+                ).astype(bool)
                 data["gt_classes"][t] = cls_id
                 data["gt_class_name"][t] = cls
 
@@ -388,7 +388,6 @@ class BDD(_BaseDataset):
                 assume_unique=True,
             )
 
-
             tk_ids = raw_data["tk_ids"][t][tk_mask]
             tk_dets = raw_data["tk_dets"][t][tk_mask]
             tracker_classes = raw_data["tk_classes"][t][tk_mask]
@@ -397,7 +396,6 @@ class BDD(_BaseDataset):
             tracker_overlap_classes = raw_data["tk_classes"][t][tk_overlap_mask]
             # tracker_confidences = raw_data["tk_confidences"][t][tk_mask]
             sim_scores_masked = sim_scores[t][gt_class_mask, :][:, tk_mask]
-
 
             # add filtered prediction to the data
             data["tk_classes"][t] = tracker_classes
@@ -426,12 +424,12 @@ class BDD(_BaseDataset):
             gt_id_map[unique_gt_ids] = np.arange(len(unique_gt_ids))
             data["gt_id_map"] = {}
             for gt_id in unique_gt_ids:
-                new_gt_id = gt_id_map[gt_id].astype(np.int)
+                new_gt_id = gt_id_map[gt_id].astype(int)
                 data["gt_id_map"][new_gt_id] = gt_id
 
             for t in range(raw_data["num_timesteps"]):
                 if len(data["gt_ids"][t]) > 0:
-                    data["gt_ids"][t] = gt_id_map[data["gt_ids"][t]].astype(np.int)
+                    data["gt_ids"][t] = gt_id_map[data["gt_ids"][t]].astype(int)
 
         if len(unique_tk_ids) > 0:
             unique_tk_ids = np.unique(unique_tk_ids)
@@ -440,16 +438,16 @@ class BDD(_BaseDataset):
 
             data["tk_id_map"] = {}
             for track_id in unique_tk_ids:
-                new_track_id = tk_id_map[track_id].astype(np.int)
+                new_track_id = tk_id_map[track_id].astype(int)
                 data["tk_id_map"][new_track_id] = track_id
 
             for t in range(raw_data["num_timesteps"]):
                 if len(data["tk_ids"][t]) > 0:
-                    data["tk_ids"][t] = tk_id_map[data["tk_ids"][t]].astype(np.int)
+                    data["tk_ids"][t] = tk_id_map[data["tk_ids"][t]].astype(int)
                 if len(data["tk_overlap_ids"][t]) > 0:
                     data["tk_overlap_ids"][t] = tk_id_map[
                         data["tk_overlap_ids"][t]
-                    ].astype(np.int)
+                    ].astype(int)
 
         # record overview statistics.
         data["num_tk_cls_dets"] = num_tk_cls_dets
