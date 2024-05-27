@@ -50,7 +50,7 @@ class Evaluator:
             # Evaluate each tracker
             for tracker in tracker_list:
                 try:
-                    self.evaluate_tracker(
+                    output_res, output_msg = self.evaluate_tracker(
                         tracker,
                         dataset,
                         dname,
@@ -224,7 +224,7 @@ class Evaluator:
             print("Saved the TETA summary results.")
 
         # output
-        output_res[dname][mname] = res
+        output_res[dname][mname] = all_res[s_key][cls_keys[0]][mname][t]
         output_msg[dname][tracker] = "Success"
 
         return output_res, output_msg
