@@ -77,7 +77,7 @@ If your folder structure is different, you may need to change the corresponding 
 Our folder structure follows
 
 ```
-├── qdtrack
+├── teter
 ├── tools
 ├── configs
 ├── data
