@@ -13,11 +13,19 @@ However, this is far from the case in recent large-scale MOT datasets, which con
 We address these issues by disentangling classification from tracking.
 We introduce a new metric, Track Every Thing Accuracy (TETA), breaking tracking measurement into three sub-factors: localization, association, and classification, allowing comprehensive benchmarking of tracking performance even under inaccurate classification. TETA also deals with the challenging incomplete annotation problem in large-scale tracking datasets. We further introduce a Track Every Thing tracker (TETer), that performs association using Class Exemplar Matching (CEM). Our experiments show that TETA evaluates trackers more comprehensively, and TETer achieves significant improvements on the challenging large-scale datasets BDD100K and TAO compared to the state-of-the-art.
 
+## Update TETA metric
+
+*New Repo*: we update the TETA metric to a new repo: [TETA](https://github.com/siyuanliii/TETA). It is more user-friendly and has more features. 
+
+The new repo directly supports evaluation for `TAO TETA benchmark`, `Open-vocabulary MOT benchmark`, `BDD100K MOT benchmark`, and `BDD100K MOTS benchmark`. 
+Please refer to the new repo for the latest updates.
+
 ## TETA
-[TETA](teta/README.md) builds upon the HOTA metric, while extending it to better deal with
+[TETA](https://github.com/siyuanliii/TETA) builds upon the HOTA metric, while extending it to better deal with
 multiple categories and incomplete annotations. TETA evaluate trackers based on a novel local cluster design. TETA consists of three parts: a
 localization score, an association score, and a classification score, which enable
 us to evaluate the different aspects of each tracker properly.
+
 
 
 Install TETA metric:

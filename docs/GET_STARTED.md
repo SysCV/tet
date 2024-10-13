@@ -22,7 +22,6 @@ After downloaded the annotations, please transform the offical annotation files 
 
 First, uncompress the downloaded annotation file and you will obtain a folder named `bdd100k`.
 
-
 To convert the detection set, you can do as
 ```bash
 mkdir data/bdd/annotations/det_20
